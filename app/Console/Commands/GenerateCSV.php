@@ -51,7 +51,7 @@ class GenerateCSV extends Command
             return true;
         }
 
-        if (preg_match('/[^a-zA-Z]/', $this->option('string'))) {
+        if (!preg_match('/^[a-zA-Z ]*$/', $this->option('string'))) {
             $this->info('text should only contain alphabets letters');
             return true;
         }
